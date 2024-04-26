@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Dr Hugo Nunes - MVP - LawFlow</title>
+</head>
+<body>
+        <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <img src="img/Nunes.png" alt="Logo de Hugo Nunes e nome do escritório">
+        </div>
+    </header>
+
+    <div id="imgFundo">
+    </div>
+
+    <div>
+        <div id = "divCadastrar" style="display: none;"> 
+            <section class="newCliente">
+                <input type="text" id="newCPF" placeholder="CPF do cliente:" maxlength="11">
+                <input type="text" id="newNome" placeholder="Nome completo:">
+                <input type="text" id="newTelefone" placeholder="Telefone:" maxlength="11">
+                
+                <span onclick="newCliente()" class="addBtn">Adicionar</span>
+                <a href="index.html" id="Retornar"><img src="img/btn-back.png" alt="Voltar"></a>
+            </section>
+        </div>
+    </div>
+
+    <!-- Botão de retornar a tela principal-->
+
+    <div id = "divListar">
+        <a href="index.html" id="Casa"><img src="img/segundo.png" alt="Voltar"></a>
+    </div>
+
+  <h1 style="color: blanchedalmond; margin-left: 72px;">
+    Consultar todos os clientes
+  </h1>
+
+    <!-- Tabela com clientes existentes-->
+
+<div id="listaDeClientes">
+    <section class="clientes">
+      <table id="myTable">
+        <tr>
+          <th style="width: 20%;">CPF</th>
+          <th style="width: 50%;">Nome</th>
+          <th style="width: 24%;">Telefone</th>
+          <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="25px" height="25px"></th>
+        </tr>
+      </table>
+    </section>
+  </div>
+  
+    <script src="listarTodosClientes.js"></script>
+</body>
+</html>

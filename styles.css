@@ -1,0 +1,244 @@
+body
+{
+    font-family: tahoma;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(77, 0, 0);
+}
+
+main {
+    color: whitesmoke;
+}
+
+header {
+    background-color: rgb(77, 0, 0);
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    width: 100%;
+    background-color: rgb(77, 0, 0);
+    top: 2px;
+    padding: 10px 0px;
+}
+
+#divCadastrar{
+    padding: 5px;
+}
+
+#formlarioClientes {
+    text-align: justify;
+}
+
+#imgFundo {
+    z-index: -10;
+    width: 100%;
+    background-image: url(img/J1.png);
+    height: 457px;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button {
+    
+    position: relative;
+    margin: 20px;
+    top: 50px; left: 225px;
+    justify-content: center;
+    border-radius: 115px;
+    box-shadow: 20px 7px 10px rgba(0, 0, 0, 0.479);
+}
+
+
+.newCliente,
+.newProcesso {
+    width: auto;
+    padding: 40px 70px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#cep{
+    margin: 0;
+    border: 1px solid rgb(255, 187, 0);
+    padding: 9px;
+    font-size: 16px;
+}
+
+.buscaCliente,
+.buscaProcesso {
+    width: auto;
+    padding: 10px 70px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.newCliente:after,
+.newProcesso::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.buscaCliente:after,
+.buscaProcesso:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#newCPF,
+#newNomeSocial,
+#nacionalidade,
+#estado_civil,
+#data_de_nascimento,
+#newRG,
+#orgao_expeditor,
+#uf_doc,
+#profissao,
+#email,
+#sexo,
+#rua,
+#bairro,
+#complemento,
+#cidade,
+#processo_relacionado,
+#audiencia,
+#prazo,
+#status,
+#patrono {
+    margin: 5px;
+    margin-top: 10px;
+    border: 1px solid rgb(255, 187, 0);
+    width: 18%;
+    padding: 9px;
+    font-size: 16px;
+}
+
+#num_processo {
+    margin: 5px;
+    margin-top: 10px;
+    border: 1px solid rgb(255, 187, 0);
+    width: 30%;
+    padding: 9px;
+    font-size: 16px;
+}
+
+#uf,
+#ibge,
+#numero { 
+    margin: 5px;
+    margin-top: 10px;
+    border: 1px solid rgb(255, 187, 0);
+    width: 8%;
+    padding: 9px;
+    font-size: 16px
+
+}
+
+#findCPF,
+#findProcesso {
+    margin: 0;
+    border: 1px solid rgb(255, 187, 0);
+    width: 18.5%;
+    padding: 9px;
+    font-size: 16px;
+}
+
+#newNome,
+#findNome {
+    margin: 0;
+    border: 1px solid rgb(255, 187, 0);
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#newTelefone {
+    margin: 0;
+    border: 1px solid rgb(255, 187, 0);
+    width: 13%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.addBtn {
+    padding: 10px 10px;
+    background-color: rgb(77, 5, 5);
+    color: rgb(250, 236, 158);
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 4px solid rgb(255, 187, 0);
+}
+
+.addBtn:hover {
+    background-color: gold;
+    color: rgb(2, 2, 2);
+}
+
+#Retornar {
+    padding-left: 25px;
+}
+
+.clientes,
+.processos {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.close {
+    font-size: 32px;
+}
+
+.close:hover {
+    color: darkred;
+    font-weight: bolder;
+}
+
+table,
+th,
+td {
+    border: 1px solid goldenrod;
+    border-collapse: collapse;
+    cursor: pointer;
+    padding: 12px 8px 12px 10px;
+    font-size: 18px;
+    transition: 0.2s;
+    text-align: start;
+    position: relative;
+    margin-top: 25px;
+}
+
+table{
+    background-color: white;
+    color: black;
+    width: 88.5%;
+    transition: 0.2s;
+}
+
+tr:nth-child(odd){
+    background-color: #eee;
+}
+
+th:nth-child(1){
+    width: 80%;
+}
+
+tr:hover {
+    background: rgb(250, 250, 137);
+}
+
+#Casa {
+    position: relative;
+    top: 5px; left: 1200px;
+}

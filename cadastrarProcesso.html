@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+    <title>Dr Hugo Nunes - MVP - LawFlow</title>
+</head>
+
+<body>
+            <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <img src="img/Nunes.png" alt="Logo de Hugo Nunes e nome do escritório">
+        </div>
+    </header>
+
+    <div id="imgFundo">
+    </div>
+
+    <div id = "divListar">
+      <a href="index.html" id="Casa"><img src="img/segundo.png" alt="Voltar"></a>
+    </div>
+
+    <h1 style="color: blanchedalmond; margin-left: 72px;">
+      Cadastrar Processo
+    </h1>
+
+            <!-- Opções para adicionar um novo Processo -->
+
+    <div>
+      <div id = "divCadastrar">
+        <section class="newProcesso"> 
+          <form>
+            <div id="formlarioProcessos">
+              
+              <label for="num_processo" class="form-label">Número do Processo</label>
+              <input type="text" class="form-control" id="num_processo" placeholder="CAMPO OBRIGATÓRIO" maxlength="20">
+
+              <label for="prazo" class="form-label">Prazo</label>
+              <input type="text" class="form-control" id="prazo" placeholder="Prazo">
+              <label> dias </label><br />
+              
+              <label for="audiencia" class="form-label">Audiência</label>
+              <input type="tel" class="form-control" id="audiencia" placeholder="Coloque a data:" maxlength="10">
+
+              <label for="status" class="form-label">Status do Processo</label>
+              <input type="text" class="form-control" id="status" placeholder="Status"><br />
+
+              <label for="processo_relacionado" class="form-label">Processo Relacionado</label>
+              <input type="text" class="form-control" id="processo_relacionado" placeholder="Número">
+                                    
+              <label for="patrono" class="form-label">Patrono(s)</label>
+              <input type="text" class="form-control" id="patrono" placeholder="Patrono">
+
+              <span onclick="newProcesso()" class="addBtn">Adicionar</span>
+                 
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+    
+    <script src="cadastrarProcesso.js"></script>
+
+</body>
+</html>

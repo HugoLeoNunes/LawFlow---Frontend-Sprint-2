@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+    <title>Dr Hugo Nunes - MVP - LawFlow</title>
+</head>
+
+<body>
+            <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <img src="img/Nunes.png" alt="Logo de Hugo Nunes e nome do escritório">
+        </div>
+    </header>
+
+    <div id="imgFundo">
+    </div>
+
+    <div id = "divListar">
+      <a href="index.html" id="Casa"><img src="img/segundo.png" alt="Voltar"></a>
+    </div>
+
+    <h1 style="color: blanchedalmond; margin-left: 72px;">
+      Cadastrar clientes
+    </h1>
+
+            <!-- Opções para adicionar um novo cliente -->
+
+    <div>
+      <div id = "divCadastrar">
+        <section class="newCliente"> 
+          <form>
+            <div id="formlarioClientes">
+              
+              <label for="cpf" class="form-label">CPF</label>
+              <input type="text" class="form-control" id="newCPF" placeholder="CAMPO OBRIGATÓRIO" maxlength="11">
+
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="newNome" placeholder="Nome completo:">
+              
+              <label for="telefone" class="form-label">Telefone</label>
+              <input type="tel" class="form-control" id="newTelefone" placeholder="Telefone:" maxlength="11"><br />
+
+              <label for="nome_social" class="form-label">Nome Social</label>
+              <input type="text" class="form-control" id="newNomeSocial" placeholder="">
+
+              <label for="nacionalidade" class="form-label">Nacionalidade</label>
+              <input type="text" class="form-control" id="nacionalidade">
+                                    
+              <label for="estado_civil" class="form-label">Estado Civil</label>
+              <input type="text" class="form-control" id="estado_civil"><br />
+                                    
+              <label for="data_de_nascimento" class="form-label">Data de Nascimento</label>
+              <input type="date" class="form-control" id="data_de_nascimento"><br />
+
+              <label for="rg" class="form-label">RG</label>
+              <input type="text" class="form-control" id="newRG" placeholder="" maxlength="15">
+  
+              <label for="orgao_expeditor" class="form-label">Órgão Expeditor</label>
+              <input type="text" class="form-control" id="orgao_expeditor">
+  
+              <label for="uf_doc" class="form-label">UF do Documento</label>
+              <input type="text" class="form-control" id="uf_doc"><br />
+                                    
+              <label for="profissao" class="form-label">Profissão</label>
+              <input type="text" class="form-control" id="profissao">
+                                    
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+                                    
+              <label for="sexo" class="form-label">Sexo</label>
+              <input type="text" class="form-control" id="sexo">
+
+            </div>
+
+            <div formularioCep>
+              <form method="get" action=".">
+                <label>Cep:
+                <input name="cep" type="text" id="cep" value="" placeholder="Digite o CEP" maxlength="9"
+                  onblur="pesquisacep(this.value);" /></label>
+                <label>Rua:
+                <input name="rua" type="text" id="rua" /></label>
+                <label for="numero" class="form-label">Número</label>
+                <input type="text" class="form-control" id="numero">
+                <label>Bairro:
+                <input name="bairro" type="text" id="bairro" /></label><br />
+                <label for="complemento" class="form-label">Complemento</label>
+                <input type="text" class="form-control" id="complemento">
+                <label>Cidade:
+                <input name="cidade" type="text" id="cidade"/></label>
+                <label>Estado:
+                <input name="uf" type="text" id="uf" size="2" /></label>
+                <label>IBGE:
+                <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+              </form>
+            </div>
+          </form>
+          <span onclick="newCliente()" class="addBtn">Adicionar</span>
+        </section>
+      </div>
+    </div>
+    
+    <script src="cadastrarClientes.js"></script>
+
+</body>
+</html>

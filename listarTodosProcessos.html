@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Dr Hugo Nunes - MVP - LawFlow</title>
+</head>
+<body>
+        <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <img src="img/Nunes.png" alt="Logo de Hugo Nunes e nome do escritório">
+        </div>
+    </header>
+
+    <div id="imgFundo">
+    </div>
+
+    <div>
+        <div id = "divCadastrar" style="display: none;">
+          <section class="newProcesso"> 
+                
+            <label for="num_processo" class="form-label">Número do Processo</label>
+            <input type="text" class="form-control" id="num_processo" placeholder="CAMPO OBRIGATÓRIO" maxlength="20">
+
+            <label for="prazo" class="form-label">Prazo</label>
+            <input type="text" class="form-control" id="prazo" placeholder="Prazo">
+            <label> dias </label><br />
+            
+            <label for="audiencia" class="form-label">Audiência</label>
+            <input type="tel" class="form-control" id="audiencia" placeholder="Coloque a data:" maxlength="10">
+
+            <label for="status" class="form-label">Status do Processo</label>
+            <input type="text" class="form-control" id="status" placeholder="Status"><br />
+
+            <label for="processo_relacionado" class="form-label">Processo Relacionado</label>
+            <input type="text" class="form-control" id="processo_relacionado" placeholder="Número">
+                                    
+            <label for="patrono" class="form-label">Patrono(s)</label>
+            <input type="text" class="form-control" id="patrono" placeholder="Patrono">
+
+            <span onclick="newProcesso()" class="addBtn">Adicionar</span>
+                   
+          </section>
+        </div>
+      </div>
+
+    <!-- Botão de retornar a tela principal-->
+
+    <div id = "divListar">
+        <a href="index.html" id="Casa"><img src="img/segundo.png" alt="Voltar"></a>
+    </div>
+
+  <h1 style="color: blanchedalmond; margin-left: 72px;">
+    Consultar todos os Processos
+  </h1>
+
+    <!-- Tabela com Processos existentes-->
+
+<div id="listaDeProcessos">
+    <section class="processos">
+      <table id="myTable">
+        <tr>
+          <th style="width: auto;">Número do Processo</th>
+          <th style="width: auto;">Prazo</th>
+          <th style="width: auto;">Audiência</th>
+          <th style="width: auto;">Status</th>
+          <th style="width: auto;">Proc. Rel.</th>
+          <th style="width: auto;">Patrono</th>
+          <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="25px" height="25px"></th>
+        </tr>
+      </table>
+    </section>
+  </div>
+  
+    <script src="listarTodosProcessos.js"></script>
+</body>
+</html>

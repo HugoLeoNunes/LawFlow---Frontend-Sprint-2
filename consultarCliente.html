@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Dr Hugo Nunes - MVP - LawFlow</title>
+</head>
+<body>
+        <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <img src="img/Nunes.png" alt="Logo de Hugo Nunes e nome do escritório">
+        </div>
+    </header>
+
+    <div id="imgFundo">
+    </div>
+
+    <div>
+        <div id = "divCadastrar" style="display: none;"> 
+          <section class="newCliente">
+            <input type="text" id="newCPF" placeholder="CPF do cliente:" maxlength="11">
+            <input type="text" id="newNome" placeholder="Nome completo:">
+            <input type="text" id="newTelefone" placeholder="Telefone:" maxlength="11">
+            <input type="text" id="newNomeSocial" placeholder="Nome Social:">
+            <input type="text" id="newRG" placeholder="Número do RG:" maxlength="15">
+            <span onclick="newCliente()" class="addBtn">Adicionar</span>
+            <a href="index.html" id="Retornar"><img src="img/btn-back.png" alt="Voltar"></a>
+        </section>
+        </div>
+    </div>
+
+    <!-- Botão de retornar a tela principal-->
+
+    <div id = "divListar">
+        <a href="index.html" id="Casa"><img src="img/segundo.png" alt="Voltar"></a>
+    </div>
+
+    <!-- Formulário para buscar cliente por CPF -->
+  
+  <div id="consultarcliente">
+    <section class="buscaCliente">
+      <input type="text" id="findCPF" placeholder="CPF que deseja consultar:" maxlength="11">
+      <!-- <input type="text" id="findNome" placeholder="Nome que deseja consultar:"> -->
+      <span onclick="getCliente(document.getElementById('findCPF').value)" class="addBtn">Encontrar cliente</span>
+    </section>
+  </div>
+
+    <!-- Tabela com clientes existentes-->
+
+<div id="listaDeClientes">
+    <section class="clientes">
+      <table id="myTable">
+        <tr>
+          <th style="width: auto;">CPF</th>
+          <th style="width: auto">Nome</th>
+          <th style="width: auto">Telefone</th>
+          <th Style="width: auto;"> Nome Social</th>
+          <th style="width: auto;"> RG</th>
+          <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="25px" height="25px"></th>
+        </tr>
+
+      
+      </table>
+    </section>
+  </div>
+  
+    <script src="consultarClienteScript.js"></script>
+</body>
+</html>
