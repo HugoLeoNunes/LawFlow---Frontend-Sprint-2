@@ -88,17 +88,17 @@ Desta forma, na pasta criada ficará apenas o arquivo docker-compose.yml e as pa
 
 Caso prefira, basta criar o arquivo docker-compose.yml na pasta raiz do projeto (pasta contendo ambos os repositórios), contendo o seguinte código:
 
-` # docker-compose.yml
-version: '3'
-services:
-  backend:
-    build: ./LFBackAvancado
-    ports:
-      - "5000:5000"
-  frontend:
-    build: ./LFFrontBasico
-    ports:
-      - "80:80" `
+` # docker-compose.yml`
+`version: '3'`
+`services:`
+`  backend:`
+`    build: ./LFBackAvancado`
+`    ports:`
+`      - "5000:5000"`
+`  frontend:`
+`   build: ./LFFrontBasico`
+`    ports:`
+`      - "80:80" `
 
 Após, navegue até a pasta onde ambos os repositórios estão, com o diretório que contém o docker-compose.yml no terminal. Execute como administrador o seguinte comando para construir a imagem Docker:
 
