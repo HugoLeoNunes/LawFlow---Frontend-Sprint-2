@@ -1,7 +1,7 @@
 # LawFlow
   
   
-*Informações sobre como utilizar o app no [readme.md](https://github.com/HugoLeoNunes/MVP_Back/blob/main/meu_app_api/README.md) dentro da pasta meu_app_api*
+*Informações sobre como utilizar a api, ao final deste arquivo.*
 
 
 
@@ -14,11 +14,11 @@ Assim, trata-se da etapa inaugural de um projeto destinado ao controle administr
 
 ### Agradecimentos: 
 
-* Em primeiro lugar a Deus por me ensinar que cada desafio é uma oportunidade de aprender a caminhar e conquistar coisas maiores.
-* A Minha maravilhosa esposa, que é minha fonte de carinho e amor.
+* Em primeiro lugar a Deus, por me ensinar que cada desafio é uma oportunidade de aprender a caminhar e conquistar coisas maiores.
+* A minha maravilhosa esposa, que é minha fonte de carinho e amor.
 * As minhas filhas que são literalmente meu TUDO, e mais necessárias a minha existência do que o ar que respiro. Sem deixar de dizer, que sempre que podem, pulam em mim enquanto estou trabalhando ou estudando. 👶
-* Aos amigos que me ssalvam nos dias mais dificeis. Principalemte ao Cadu e ao Rodrigo pelas tempestivas ajudas, sem a qual não teria conseguido terminar este projeto.
-*  Aos meus professores por partilhar seu onhecimento e acreditar no meu potencial.
+* Aos amigos que me salvam nos dias mais dificeis. Principalemte ao Cadu e ao Rodrigo pelas tempestivas ajudas, sem a qual não teria conseguido terminar este projeto.
+*  Aos meus professores por partilhar seu conhecimento e acreditar no meu potencial.
 *  Por último, mas não menos importante, a mim mesmo... Pelo esforço e dedicação. 🥇
 
 
@@ -60,22 +60,108 @@ Por derradeiro, o aplicativo não apenas proporciona um meio acessível para adv
 [**Dr. Hugo Leonardo Nunes.**](https://www.linkedin.com/in/hugo-leonardo-nunes-474152246/) 
 * Consultor Juridico da Nunes & Nunes advogados.
 * Gestor público estadual concursado.
-* Mestre cervejeiro da Sexy Devil Beer (Hoby mais saboroso do mundo).
+* Mestre cervejeiro da Sexy Devil Beer (Hobby mais saboroso do mundo).
 * UX Design formado pela Google.
 * Desenvolvedor full stack em treinamento.
 
 
-Ademais...
+# LawFlow  - INSTRUÇÕES DE USO
+
+Esta é a versão 1.0.1 de um projeto (MVP) de uma aplicação Web, planejada para o controle de clientes e processos de um escritório de advocacia, voltado para pessoas com pouca afinidade com tecnologia.  
+
+O objetivo aqui é demonstrar a usabilidade e a empregabilidade do aplicativo.
+
+Ainda, destacar que todos os serviços ofertados pela aplicação, podem ter como suporte e, dependendo do contrato firmado, um escritório de advocacia com advogados de renome e grande arcabouço jurídico, para auxiliar nas tramitações de seus processos. 
+
+---
+
+## Como executar 
 
 
-# LawFlow
+Certifique-se de ter o Docker instalado e em execução em sua máquina.
 
-## Simplificando o jurídico, conectando advogados ao Futuro!
+Para fins de facilidade na criação dos containers, criei um arquivo chamado docker-compose.yml. Ele está em um [**repositório próprio**](https://github.com/HugoLeoNunes/Docker-compose) para que não exista confusão. 
 
-**Informações sobre como executar:**
+Tal arquivo deverá ficar em uma pasta própria em seu computador onde este repositório e o repostitório [**LawFlow---Backend-Sprint-2**](https://github.com/HugoLeoNunes/LawFlow---Backend-Sprint-2) deverão ser clonados.
 
-Basta fazer o download do projeto, seguir os passos em [readme.md](https://github.com/HugoLeoNunes/MVP_Back/blob/main/meu_app_api/README.md) do [back end](https://github.com/HugoLeoNunes/MVP_Back/tree/main/meu_app_api) e abrir o arquivo index.html desta página no seu browser.
+Desta forma, na pasta criada ficará apenas o arquivo docker-compose.yml e as pastas LawFlow---Backend-Sprint-2 e LawFlow---Frontend-Sprint-2.
 
-*Insuflado de regozijo, malgrado fugaz o ensejo, colho-o para apetecer alvíssaras e enviar um amplexo.*
+Caso prefira, basta criar o arquivo docker-compose.yml na pasta raiz do projeto (pasta contendo ambos os repositórios), contendo o seguinte código:
+
+` # docker-compose.yml
+version: '3'
+services:
+  backend:
+    build: ./LFBackAvancado
+    ports:
+      - "5000:5000"
+  frontend:
+    build: ./LFFrontBasico
+    ports:
+      - "80:80" `
+
+Após, navegue até a pasta onde ambos os repositórios estão, com o diretório que contém o docker-compose.yml no terminal. Execute como administrador o seguinte comando para construir a imagem Docker:
+
+`$ docker-compose up` 
+
+Podendo ainda executar o comando:
+
+ `$ docker-compose up -d` 
+ 
+para deixar o processo em background.
+
+> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
+
+Pronto, para ver o frontend em execução basta digitar em seu navegador: [http://localhost/index.html](http://localhost/index.html)
+
+Para ver a execução da API através do flask com a documentação do backend, basta digitar em seu navegador: [http://localhost:5000](http://localhost:5000)
+
+
+### Alguns conhecimentos úteis sobre como executei os containers.
+
+Adicionei o trecho infra de código no arquivo app.py: 
+
+`if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)`
+
+ Assim, este trecho de código inicia o servidor de desenvolvimento do Flask na porta 5000 quando o script é executado diretamente. Se o script é importado como um módulo, o servidor não é iniciado.
+
+*Explicação do Dockerfile do Backend*
+
+FROM python:3.10: Isso define a imagem base como a imagem oficial do Python 3.10. 
+
+WORKDIR /app: Isso define o diretório de trabalho no container para /app. Todos os comandos que seguem esta linha no Dockerfile, serão executados neste diretório.
+
+RUN pip install -r requirements.txt: Isso instala as dependências Python listadas no arquivo requirements.txt.
+
+COPY . .: Isso copia todos os outros arquivos do seu diretório de construção local para o diretório de trabalho no container.
+
+CMD ["python", "app.py"]: Isso define o comando padrão que será executado quando o container for iniciado. Neste caso, ele irá executar app.py com o interpretador Python.
+
+*Explicação do Dockerfile do Frontend*
+
+Este é um Dockerfile bastante simples que está configurado para criar uma imagem Docker para servir um site estático usando o servidor web Nginx.
+
+FROM nginx:alpine: Esta linha especifica a imagem base que será usada para criar a nova imagem Docker. Neste caso, está sendo usada a imagem nginx:alpine, que é uma versão do servidor web Nginx que foi construída usando a distribuição Alpine Linux. A distribuição Alpine Linux é conhecida por ser muito leve, o que pode ajudar a manter o tamanho da imagem Docker pequeno.
+
+COPY . /usr/share/nginx/html: Esta linha copia os arquivos do diretório atual (onde o Dockerfile está localizado) para o diretório /usr/share/nginx/html dentro do container. Este é o diretório que o Nginx usa por padrão, para servir arquivos estáticos. Portanto, qualquer arquivo HTML, CSS, JavaScript, etc., que você tenha no diretório atual, será servido pelo Nginx quando o container for iniciado.
+
+*Explicação do Docker Compose*
+
+O arquivo docker-compose.yml é usado pelo Docker Compose para definir e gerenciar múltiplos containers Docker como um único serviço. Aqui está o que cada parte do seu arquivo faz:
+
+version: '3': Esta linha especifica a versão da sintaxe do Docker Compose que está sendo usada. A versão '3' é a mais recente e suporta todos os recursos do Docker Compose.
+
+services:: Esta linha inicia a definição dos serviços que compõem a sua aplicação. Cada serviço corresponde a um container Docker.
+
+backend: e frontend:: Estas linhas definem dois serviços, backend e frontend. Cada serviço terá seu próprio container Docker.
+
+build: ./LFBackAvancado e build: ./LFFrontBasico: Estas linhas especificam o caminho para o Dockerfile que será usado para construir a imagem Docker para cada serviço. O Docker Compose irá procurar um arquivo chamado Dockerfile nesses diretórios e usá-lo para construir a imagem.
+
+ports:: Esta linha inicia a definição das portas que serão expostas pelo container.
+
+- "5000:5000" e - "80:80": Estas linhas mapeiam as portas do container para as portas do host. O formato é porta_do_host:porta_do_container. Portanto, a aplicação backend estará acessível na porta 5000 do host e a aplicação frontend estará acessível na porta 80 do host.
+
+Em resumo, este arquivo docker-compose.yml define uma aplicação composta por dois serviços, backend e frontend. Cada serviço é construído a partir de seu próprio Dockerfile e expõe uma porta para o host.
 
 [**Dr. Hugo Leonardo Nunes.**](https://www.linkedin.com/in/hugo-leonardo-nunes-474152246/) 
